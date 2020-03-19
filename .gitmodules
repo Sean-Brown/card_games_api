@@ -1,0 +1,3 @@
+[submodule "card_games"]
+	path = card_games
+	url = git@github.com:Sean-Brown/card_games.git

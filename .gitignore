@@ -1,0 +1,6 @@
+# build folder
+dist/
+
+yarn.lock
+
+node_modules/

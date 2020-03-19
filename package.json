@@ -9,7 +9,7 @@
     "private": false,
     "scripts": {
         "build": "node ./node_modules/.bin/tsc",
-        "start": "yarn build && node ./dist/index.js"
+        "start": "yarn build && node ./index.js"
     },
     "dependencies": {
         "express": "^4.17.1",

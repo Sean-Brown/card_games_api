@@ -1,7 +1,9 @@
-# build folder
-dist/
+# build artifacts
+*.js
+*.js.map
 
 yarn.lock
 yarn-error.log
 
 node_modules/
+card_games/

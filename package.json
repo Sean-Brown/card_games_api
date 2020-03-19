@@ -1,0 +1,10 @@
+{
+  "name": "card_games_api",
+  "version": "1.0.0",
+  "description": "API wrapper around the card_games repository.",
+  "main": "index.js",
+  "repository": "git@github.com:Sean-Brown/card_games_api.git",
+  "author": "Sean Brown <smbrown3706@gmail.com>",
+  "license": "MIT",
+  "private": false
+}

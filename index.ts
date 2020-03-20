@@ -43,7 +43,7 @@ app.post('/begin', (req, res) => {
 
 app.get('/hand', (req, res) => {
   try {
-    const hand = cribbage.getPlayerHand(req.query.player);
+    const hand = cribbage.getPlayerHand(req.body.player);
     res.status(200).json({ hand: hand.items.map(card => card.shortString()) });
   } catch (e) {
     res.status(500).json({ message: e });

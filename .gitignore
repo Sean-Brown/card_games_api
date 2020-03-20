@@ -2,7 +2,6 @@
 *.js
 *.js.map
 
-yarn.lock
 yarn-error.log
 
 .vscode/

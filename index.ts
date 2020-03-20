@@ -1,11 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { Cribbage, CribbageStrings } from 'card_games/implementations/cribbage';
-import { Players } from 'card_games/base_classes/card_game';
-import { CribbagePlayer } from 'card_games/implementations/cribbage_player';
-import { CribbageHand } from 'card_games/implementations/cribbage_hand';
-import { parseCards } from 'lib';
-import { ItemCollection } from 'card_games/base_classes/collections/item_collection';
+import {
+  Cribbage,
+  CribbageStrings,
+} from './card_games/implementations/cribbage';
+import { Players } from './card_games/base_classes/card_game';
+import { CribbagePlayer } from './card_games/implementations/cribbage_player';
+import { CribbageHand } from './card_games/implementations/cribbage_hand';
+import { ItemCollection } from './card_games/base_classes/collections/item_collection';
+import { parseCards } from './lib';
 
 const app = express();
 const port = 3000;

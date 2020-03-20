@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true,
-        "target": "es6",
-        "noImplicitAny": true,
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "baseUrl": ".",
-        "allowSyntheticDefaultImports": true
-    },
-    "exclude": ["node_modules", "card_games"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "card_games"]
 }

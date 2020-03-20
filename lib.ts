@@ -1,6 +1,6 @@
-import { CribbageStrings } from 'card_games/implementations/cribbage';
-import { Value, Suit } from 'card_games/base_classes/items/card';
-import { BaseCard as Card } from 'card_games/base_classes/items/card';
+import { CribbageStrings } from './card_games/implementations/cribbage';
+import { Value, Suit } from './card_games/base_classes/items/card';
+import { BaseCard as Card } from './card_games/base_classes/items/card';
 
 function removeSpaces(str: string): string {
   return str.replace(/\s+/g, '');

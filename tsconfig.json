@@ -7,7 +7,9 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "exclude": ["node_modules", "card_games"]
 }

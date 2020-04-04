@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { createConnection } from 'typeorm';
 
+import registerUserRoutes from './controllers/user';
 import registerCribbageRoutes from './controllers/cribbage';
 
 const app = express();
@@ -31,6 +32,7 @@ async function runMigrations() {
 }
 
 function registerRoutes() {
+  registerUserRoutes(app);
   registerCribbageRoutes(app);
 }
 

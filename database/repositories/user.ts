@@ -3,7 +3,7 @@ import { hash, compare } from 'bcrypt';
 import { User } from '../entity/user';
 import { saltRounds } from '../constants';
 
-@EntityRepository()
+@EntityRepository(User)
 export class UserRepository extends Repository<User> {
   /**
    * Find a user by username
@@ -18,26 +18,30 @@ export class UserRepository extends Repository<User> {
    * Register the given user
    * @param userName
    * @param password
-   * @returns {number} id of the new user
+   * @returns {User} the new user entity
    */
-  async register(userName: string, password: string) {
-    const connection = await createConnection();
+  async register(userName: string, password: string): Promise<User> {
     const hashedPassword = await hash(password, saltRounds);
-    const newUser = await connection.manager.save({
+    const newUser = await this.save({
       userName,
       passwordHash: hashedPassword,
     } as User);
-    return newUser.id;
+    return newUser;
   }
 
   /**
    * Verify the password for the given user
    * @param userName
    * @param password
-   * @returns {boolean} true if the password matches
+   * @returns {User} the verified user
+   * @throws {Error} throws and exception if the username
+   * and password do not match
    */
   async verify(userName: string, password: string) {
     const user = await this.findByName(userName);
-    return await compare(password, user.passwordHash);
+    if (!(await compare(password, user.passwordHash))) {
+      throw new Error('username and password do not match');
+    }
+    return user;
   }
 }

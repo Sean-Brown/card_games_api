@@ -1,0 +1,11 @@
+default:
+  type: mysql
+  host: localhost
+  port: 3306
+  database: card_service
+  username:
+  password:
+  entities: [database/entity/*.js]
+  migrations: [database/migration/*.js]
+  cli:
+    migrationsDir: database/migration

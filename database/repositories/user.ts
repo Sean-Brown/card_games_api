@@ -1,19 +1,17 @@
 import { EntityRepository, Repository, createConnection } from 'typeorm';
 import { hash, compare } from 'bcrypt';
 import { User } from '../entity/user';
-import { saltRounds } from '../../../constants';
+import { saltRounds } from '../constants';
 
 @EntityRepository()
 export class UserRepository extends Repository<User> {
   /**
    * Find a user by username
    * @param {string} userName
-   * @returns {User?} the user model, if it exists in the database
+   * @returns {Promise<User>} the user model, if it exists in the database
    */
-  findByName(userName: string) {
-    return this.createQueryBuilder('user')
-      .where('user.userName = :userName', { userName })
-      .getOne();
+  findByName(userName: string): Promise<User> {
+    return this.findOne({ where: { userName } });
   }
 
   /**

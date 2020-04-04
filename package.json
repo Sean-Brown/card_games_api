@@ -1,28 +1,28 @@
 {
-    "name": "card_games_api",
-    "version": "1.0.0",
-    "description": "API wrapper around the card_games repository.",
-    "main": "index.js",
-    "repository": "git@github.com:Sean-Brown/card_games_api.git",
-    "author": "Sean Brown <smbrown3706@gmail.com>",
-    "license": "MIT",
-    "private": false,
-    "scripts": {
-        "build": "node ./node_modules/.bin/tsc",
-        "start": "yarn build && node ./index.js"
-    },
-    "dependencies": {
-        "@types/bcrypt": "^3.0.0",
-        "@types/node": "^13.9.8",
-        "bcrypt": "^4.0.1",
-        "body-parser": "^1.19.0",
-        "express": "^4.17.1",
-        "mysql": "^2.18.1",
-        "reflect-metadata": "^0.1.13",
-        "typeorm": "^0.2.24",
-        "typescript": "^3.8.3"
-    },
-    "devDependencies": {
-        "@types/express": "^4.17.3"
-    }
+  "name": "card_games_api",
+  "version": "1.0.0",
+  "description": "API wrapper around the card_games repository.",
+  "main": "index.js",
+  "repository": "git@github.com:Sean-Brown/card_games_api.git",
+  "author": "Sean Brown <smbrown3706@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node ./node_modules/.bin/tsc",
+    "start": "yarn build && node ./index.js"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/node": "^13.9.8",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.3"
+  }
 }

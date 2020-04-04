@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import bodyParser from 'body-parser';
+import { createConnection } from 'typeorm';
 
 import registerCribbageRoutes from './controllers/cribbage';
 
@@ -14,6 +15,29 @@ app.use(
   })
 );
 
-registerCribbageRoutes(app);
+async function runMigrations() {
+  try {
+    console.log('running the database migrations');
+    const connection = await createConnection();
+    const migrationsRan = await connection.runMigrations();
+    console.log(
+      `ran ${migrationsRan.length} database migration${
+        migrationsRan.length === 1 ? '' : 's'
+      } successfully`
+    );
+  } catch (e) {
+    console.error('Failed to run the database migrations', e);
+  }
+}
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+function registerRoutes() {
+  registerCribbageRoutes(app);
+}
+
+(async function init() {
+  await runMigrations();
+
+  registerRoutes();
+
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+})();
